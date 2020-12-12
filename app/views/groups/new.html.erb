@@ -1,0 +1,9 @@
+<h2>Create a new group</h2><br /><br />
+
+<%= form_with(model: [:user, @group]) do |f| %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name, autofocus: true %><br /><br />
+  <%= f.label 'Upload an icon for the group' %><br />
+  <%= f.file_field :icon %><br /><br />
+  <%= f.submit 'Create a group' %>
+<% end %>
