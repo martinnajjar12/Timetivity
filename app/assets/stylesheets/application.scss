@@ -12,7 +12,5 @@
  *
  */
 @import "bootstrap";
-
-.container {
-  max-width: 540px;
-}
+@import "groups";
+@import "custom";
