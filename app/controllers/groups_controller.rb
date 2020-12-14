@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
     @group = current_user.groups.build(group_params)
 
     if @group.save
+      @group.name.capitalize
       redirect_to new_user_session_path
     else
       render new
