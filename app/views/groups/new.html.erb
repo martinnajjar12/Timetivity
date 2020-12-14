@@ -1,3 +1,4 @@
+<div class='container'>
 <h2>Create a new group</h2><br /><br />
 
 <%= form_with(model: [:user, @group]) do |f| %>
@@ -7,3 +8,4 @@
   <%= f.file_field :icon %><br /><br />
   <%= f.submit 'Create a group' %>
 <% end %>
+</div>

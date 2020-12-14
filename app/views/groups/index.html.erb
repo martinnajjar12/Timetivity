@@ -1,5 +1,5 @@
 <%= render 'layouts/user_avatar' %>
-
+<div class='container'>
 <% @groups.each do |group| %>
   <% present group do |group_presenter| %>
     <ul class='w-100'>
@@ -14,3 +14,4 @@
 <% end %>
 
 <%= link_to 'Create a new Group', new_user_group_path(current_user.id), class: 'btn btn-success fixed-bottom' %>
+</div>

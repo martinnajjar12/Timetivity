@@ -10,7 +10,8 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
+    @group = Group.includes(:activities).find(params[:id])
+    @group_activities = @group.activities.all
   end
 
   def create

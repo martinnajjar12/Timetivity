@@ -1,17 +1,18 @@
 class ActivitiesController < ApplicationController
   def new
     @activity = Activity.new
-    @groups = Group.all.order('name ASC')
   end
 
   def create
-    @activity = current_user.activities.build(activity_params)
-    # @activity.group_id = activity_params[:group.id]
+    @group = Group.find(params[:group_id])
+    @activity = Activity.new(activity_params)
+    @activity.group_id = @group.id
+    @activity.user_id = current_user.id
 
     if @activity.save
       @activity.name.capitalize
       flash[:notice] = 'Activity has been created!'
-      redirect_to @root
+      redirect_to root_path
     else
       flash[:alert] = "Activity hasn't been created! Check your inputs please!"
       render new
@@ -20,6 +21,6 @@ class ActivitiesController < ApplicationController
 
   private
   def activity_params
-    params.require(:activity).permit(:name, :activity)
+    params.require(:activity).permit(:name, :time)
   end
 end

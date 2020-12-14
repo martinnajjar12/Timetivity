@@ -1,3 +1,19 @@
+<div class='w-100'>
+  <div class='bg-white rounded text-dark d-flex justify-content-between fw-bold time-div mb-3'>
+    <div class='text-muted'>Total Time:</div>
+    <div><%= total_time %> hours</div>
+  </div>
+</div>
+
+<div class='container'>
 <h2><%= @group.name.capitalize %> activities</h2>
 
-<%= link_to 'Create a new Activity', new_user_activity_path, class: 'btn btn-success' %>
+<%= link_to 'Create a new Activity', new_group_activity_path(@group.id), class: 'btn btn-success' %>
+
+<ul>
+  <% @group_activities.each do |activity| %>
+    <li><%= activity.name %></li>
+  <% end %>
+</ul>
+
+</div>

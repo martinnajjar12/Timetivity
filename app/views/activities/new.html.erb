@@ -1,8 +1,9 @@
-<div class='text-center'>
-  <%= form_with(model: [:user, @activity]) do |f| %>
+<div class='text-center container'>
+  <%= form_with(model: [:group, @activity]) do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true %>
-    <%= f.select(@activity, @groups.map { |group| [group.name, group.id] }, include_blank: true) %>
+    <%= f.text_field :name, autofocus: true %><br /><br />
+    <%= f.label :time %>
+    <%= f.number_field :time, step: 0.1 %><br /><br />
     <%= f.submit 'Create activity' %>
   <% end %>
 </div>

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :groups
+  end
+
+  resources :groups do
     resources :activities
   end
 end
