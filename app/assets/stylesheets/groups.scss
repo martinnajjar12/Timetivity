@@ -35,4 +35,18 @@ ul {
   padding: 0 15px;
   margin: 0 2px;
   align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.grey-bg {
+  background-color: #c6cbd1;
+  height: 100vh;
+}
+
+.activity-div {
+  height: 60px;
+  .img-thumbnail {
+    border: none;
+  }
 }

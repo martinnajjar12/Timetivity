@@ -9,6 +9,14 @@ class GroupPresenter < BasePresenter
     end
   end
 
+  def activity_icon
+    if group.icon.attached?
+      image_tag(group.icon, class: 'img-thumbnail icon')
+    else
+      image_tag('default.png', class: 'img-thumbnail icon')
+    end
+  end
+
   def details(user)
     link_to user_group_path(user.id, group.id), class: 'group_link w-100' do
       name_and_date
