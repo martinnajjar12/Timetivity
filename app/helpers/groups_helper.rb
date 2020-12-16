@@ -1,6 +1,10 @@
 module GroupsHelper
 
   def total_time
-    @group_activities.map(&:time).sum
+    if @group_activities.nil?
+      0
+    else
+      @group_activities.map(&:time).sum
+    end
   end
 end

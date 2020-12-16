@@ -6,15 +6,11 @@
 </div>
 
 <div class='container grey-bg pt-3 text-dark'>
-  <h2><%= @group.name.capitalize %> activities</h2>
-
-  <%= link_to 'Create a new Activity', new_user_activity_path(current_user.id), class: 'btn btn-success' %>
-
   <div class='mt-4'>
-    <% @group_activities.each do |activity| %>
-      <% present @group do |group_presenter| %>
+    <% @activities.each do |activity| %>
+      <% present activity do |activity_presenter| %>
         <div class='d-flex bg-white activity-div align-items-center rounded mb-3'>
-          <%= group_presenter.activity_icon %>
+          <%= activity_presenter.activity_icon %>
           <div class='d-flex justify-content-between w-100'>
             <div class='ml-3'>
               <div><%= activity.name %></div>
@@ -26,5 +22,5 @@
       <% end %>
     <% end %>
   </div>
-
+  <%= link_to 'Add Activity', new_user_activity_path(current_user.id), class: 'btn btn-success' %>
 </div>
