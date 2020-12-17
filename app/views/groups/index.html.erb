@@ -1,17 +1,16 @@
 <%= render 'layouts/user_avatar' %>
+
 <div class='container'>
-<% @groups.each do |group| %>
-  <% present group do |group_presenter| %>
-    <ul class='w-100'>
-      <li class='d-flex'>
 
-        <%= group_presenter.icon %>
-        <%= group_presenter.details(current_user) %>
-
-      </li>
-    </ul>
+  <% @groups.each do |group| %>
+    <% present group do |group_presenter| %>
+      <ul class='w-100'>
+        <li class='d-flex'>
+          <%= group_presenter.icon %>
+          <%= group_presenter.details(current_user) %>
+        </li>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
-
-<%= link_to 'Create a new Group', new_user_group_path(current_user.id), class: 'btn btn-success fixed-bottom' %>
+  <%= link_to 'Create a new Group', new_user_group_path(current_user.id), class: 'btn btn-success fixed-bottom' %>
 </div>

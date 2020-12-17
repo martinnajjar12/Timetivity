@@ -12,4 +12,8 @@ RSpec.describe Group, type: :model do
   describe 'associations with active_storage' do
     it { should have_one_attached(:icon) }
   end
+
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
+  end
 end

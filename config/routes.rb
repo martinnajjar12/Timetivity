@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'users#show'
 
   resources :users, only: [:show] do
-    resources :groups
-    resources :activities
+    resources :groups, except: [:edit, :update, :destroy]
+    resources :activities, except: [:edit, :show, :update, :destroy]
   end
 end

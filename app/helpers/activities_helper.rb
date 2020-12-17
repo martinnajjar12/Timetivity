@@ -1,10 +1,6 @@
 module ActivitiesHelper
-  def total_time
-    if @activities.nil?
-      0
-    else
-      @activities.map(&:time).sum
-    end
+  def activities_total_time
+    @activities.nil? ? "Zero" : @activities.map(&:time).sum
   end
 
   def external_group_id

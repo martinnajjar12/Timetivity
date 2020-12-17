@@ -12,7 +12,7 @@
       </div>
       <div class='d-flex align-items-center fs-2 mb-3'>
         <%= image_tag('group.png', class: 'img-thumbnail rounded-circle profile-icons') %>
-        <%= link_to 'All Groups', root_path, class: 'nav-link border-bottom w-100' %>
+        <%= link_to 'All Groups', user_groups_path(current_user.id), class: 'nav-link border-bottom w-100' %>
       </div>
     </div>
 </div>
