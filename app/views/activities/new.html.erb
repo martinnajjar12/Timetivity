@@ -5,7 +5,7 @@
     <%= f.label :time %>
     <%= f.number_field :time, step: 0.1 %><br /><br />
     <%= f.label 'Select Group' %>
-    <%= select("activity", "group_id", Group.all.collect { |g| [g.name, g.id] }, { include_blank: true }) %><br /><br />
+    <%= select("activity", "group_id", current_user.groups.all.collect { |g| [g.name, g.id] }, { include_blank: true }) %><br /><br />
     <%= f.submit 'Create activity' %>
   <% end %>
 </div>
