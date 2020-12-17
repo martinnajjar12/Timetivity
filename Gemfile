@@ -32,20 +32,20 @@ gem 'devise'
 gem 'gravatar_image_tag'
 gem 'jquery-rails'
 gem 'rubocop', '~>0.81.0'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sprockets-rails', require: 'sprockets/railtie'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem "database_cleaner"
-  gem "rspec-rails"
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'database_cleaner'
+  gem 'rspec-rails'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'web-console', '>= 3.3.0'
-  gem "better_errors"
-  gem "binding_of_caller"
 end
 
 group :test do
@@ -58,4 +58,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

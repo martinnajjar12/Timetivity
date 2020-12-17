@@ -10,8 +10,9 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
 
   private
+
   def create_external_group
-    group = self.groups.build(name: 'External Activities')
+    group = groups.build(name: 'External Activities')
     group.save
   end
 end
