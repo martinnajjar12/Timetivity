@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all.order('created_at DESC')
+    @activities = Activity.where.not(group_id: external_group_id).order('created_at DESC')
   end
 
   def new
@@ -26,5 +26,9 @@ class ActivitiesController < ApplicationController
   private
   def activity_params
     params.require(:activity).permit(:name, :time, :group_id)
+  end
+
+  def external_group_id
+    current_user.groups.find_by(name: 'External Activities').id
   end
 end

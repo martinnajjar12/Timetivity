@@ -7,4 +7,8 @@ module ActivitiesHelper
       @activities.map(&:time).sum
     end
   end
+
+  def external_group_id
+    current_user.groups.find_by(name: "External Activities").id
+  end
 end
