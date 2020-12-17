@@ -1,1 +1,18 @@
-<h2>Welcome again <%= @user.name %></h2>
+<%= render 'layouts/user_avatar' %>
+
+<div class='container mt-4'>
+    <div class='w-100'>
+      <div class='d-flex align-items-center fs-2 mb-3'>
+        <%= image_tag('activity.png', class: 'img-thumbnail rounded-circle profile-icons') %>
+        <%= link_to 'My Activities', user_activities_path(current_user.id), class: 'nav-link border-bottom w-100' %>
+      </div>
+      <div class='d-flex align-items-center fs-2 mb-3'>
+        <%= image_tag('external-activity.jpg', class: 'img-thumbnail rounded-circle profile-icons') %>
+        <%= link_to 'External Activities', user_group_path(current_user.id, external_group_id), class: 'nav-link border-bottom w-100' %>
+      </div>
+      <div class='d-flex align-items-center fs-2 mb-3'>
+        <%= image_tag('group.png', class: 'img-thumbnail rounded-circle profile-icons') %>
+        <%= link_to 'All Groups', root_path, class: 'nav-link border-bottom w-100' %>
+      </div>
+    </div>
+</div>
