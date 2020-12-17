@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.where.not(group_id: external_group_id).order('created_at DESC')
+    @activities = Activity.where(id: current_user.id).where.not(group_id: external_group_id).order('created_at DESC')
   end
 
   def new
