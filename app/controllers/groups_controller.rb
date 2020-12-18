@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
     if @group.save
       @group.name.capitalize
       flash[:notice] = "#{@group.name} Group has been successfully created!"
-      redirect_to new_user_session_path
+      redirect_to user_group_path(current_user.id, @group.id)
     else
       flash[:alert] = "#{@group.name} Group hasn't been created. Please check your inputs!"
       render new
