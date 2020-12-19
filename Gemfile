@@ -29,8 +29,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 5.0.0.alpha3'
 gem 'devise'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'gravatar_image_tag'
 gem 'jquery-rails'
+gem 'omniauth', '~> 1.9', '>= 1.9.1'
+gem 'omniauth-facebook'
 gem 'rubocop', '~>0.81.0'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
