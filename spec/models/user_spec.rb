@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'create external activities group' do
-    let(:john) { User.create(name: 'John', email: 'john@example.com', password: 123456) }
+    let(:john) { User.create(name: 'John', email: 'john@example.com', password: 123_456) }
     it 'has a group called external group' do
       expect(john.groups.find_by(name: 'External Activities')).not_to be nil
     end

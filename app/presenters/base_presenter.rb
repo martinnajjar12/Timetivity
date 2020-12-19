@@ -15,9 +15,12 @@ class BasePresenter
   end
 
   # This method was made in to not use h.undefined method eah time in the presenter classes
+  # rubocop:disable Style/MissingRespondToMissing
   def method_missing(*args, &block)
     @template.send(*args, &block)
+    super
   end
+  # rubocop:enable Style/MissingRespondToMissing
 
   def user_avatar(user)
     link_to user_path(user.id), class: 'link' do
