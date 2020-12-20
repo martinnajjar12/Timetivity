@@ -1,4 +1,3 @@
-# rubocop:disable Layout/EndOfLine
 class Group < ApplicationRecord
   validates :name, presence: true
   validates_uniqueness_of :name, case_sensitive: false, scope: :user
@@ -7,4 +6,3 @@ class Group < ApplicationRecord
   has_many :activities, dependent: :destroy
   has_one_attached :icon, dependent: :destroy
 end
-# rubocop:enable Layout/EndOfLine
