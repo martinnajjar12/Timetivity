@@ -9,6 +9,12 @@ class User < ApplicationRecord
   has_many :groups, dependent: :destroy
   has_many :activities, dependent: :destroy
 
+  def current_user
+    @current_user ||= super.tap do |user|
+      ::ActiveRecord::Associations::Preloader.new.preload(user, :groups)
+    end
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
