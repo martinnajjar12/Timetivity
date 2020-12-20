@@ -6,7 +6,7 @@
 
 <p align='center'><small>Database Diagram</small></p><br /><br />
 
-![screenshot](./app/assets/images/Social-media.png)
+![screenshot](./app/assets/images/screenshot.png)
 
 <p align='center'><small>A user interface screenshot</small></p><br /><br />
 
