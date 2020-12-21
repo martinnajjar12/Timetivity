@@ -33,7 +33,7 @@
 
 ## Presentation Video
 
-[Presentation Video](https://www.loom.com/share/9f399bbbb60245bbb0fcfc51149fc251)
+https://www.loom.com/share/9f399bbbb60245bbb0fcfc51149fc251
 
 ## Getting Started
 
