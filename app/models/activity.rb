@@ -3,4 +3,6 @@ class Activity < ApplicationRecord
 
   belongs_to :user
   belongs_to :group
+
+  scope :not, -> (id) { where.not('group_id= ?', id) }
 end

@@ -10,7 +10,7 @@
     </div>
     <div class='mb-3'>
       <%= f.label 'Select Group', class: 'form-label' %>
-      <%= select("activity", "group_id", current_user.groups.all.collect { |g| [g.name, g.id] }, { include_blank: true }, { class: 'form-select' }) %>
+      <%= select("activity", "group_id", current_user.groups.pluck(:name, :id), { include_blank: true }, { class: 'form-select' }) %>
     </div>
       <%= f.submit 'Create activity', class: 'btn btn-success' %>
   <% end %>

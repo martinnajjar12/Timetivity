@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.where(user_id: current_user.id).order('name ASC')
+    @groups = Group.of(current_user).ordered_alphabetically
   end
 
   def new
@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.includes(:activities).find(params[:id])
-    @group_activities = @group.activities.all
+    @group_activities = @group.activities.ordered_by_most_recent
   end
 
   def create

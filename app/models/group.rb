@@ -5,4 +5,6 @@ class Group < ApplicationRecord
   belongs_to :user
   has_many :activities, dependent: :destroy
   has_one_attached :icon, dependent: :destroy
+
+  scope :ordered_alphabetically, -> { order('name ASC') }
 end

@@ -2,8 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @activities = Activity.where(user_id: current_user.id)
-      .where.not(group_id: external_group_id).order('created_at DESC')
+    @activities = Activity.of(current_user).not(external_group_id).ordered_by_most_recent
   end
 
   def new
