@@ -18,8 +18,10 @@ module ApplicationHelper
     if user_signed_in?
       content_tag :span, class: 'd-flex' do
         concat(content_tag(:span, (link_to 'My activities', user_activities_path(current_user.id), class: 'nav-link')))
-        concat(content_tag(:span, (link_to 'External Activities', user_group_path(current_user.id, external_group_id), class: 'nav-link')))
-        concat(content_tag(:span, (link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light btn-sm')))
+        concat(content_tag(:span, (link_to 'External Activities', user_group_path(current_user.id, external_group_id),
+                                           class: 'nav-link')))
+        concat(content_tag(:span, (link_to 'Sign Out', destroy_user_session_path,
+                                           method: :delete, class: 'btn btn-outline-light btn-sm')))
       end
     else
       content_tag :span, class: 'd-flex' do
@@ -29,11 +31,14 @@ module ApplicationHelper
     end
   end
 
+  # rubocop:disable Lint/EmptyExpression
   def user_avatar
     if current_user.avatar.attached?
-      content_tag(:div, (),class: 'picture-div mx-auto rounded-circle', style: "background-image: url('#{url_for(current_user.avatar)}')")
+      content_tag(:div, (), class: 'picture-div mx-auto rounded-circle',
+                            style: "background-image: url('#{url_for(current_user.avatar)}')")
     else
       gravatar_image_tag(current_user.email, class: 'rounded-circle')
     end
   end
+  # rubocop:enable Lint/EmptyExpression
 end
