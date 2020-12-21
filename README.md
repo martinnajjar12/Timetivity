@@ -1,6 +1,6 @@
 # Timetivity
 
-> This app helps managing your time by showing you the actual time you spend on each activity.
+> This app helps to manage your time by showing you the actual time you spend on each activity.
 
 ![app_diagram](./app/assets/images/erd.png)
 
@@ -8,7 +8,7 @@
 
 ![screenshot](./app/assets/images/screenshot.png)
 
-<p align='center'><small>A user interface screenshot</small></p><br /><br />
+<p><small>A user interface screenshot</small></p><br /><br />
 
 ## Built With
 
@@ -85,6 +85,8 @@ Open `http://localhost:3000/` in your browser.
 **Note:** Sign in via Facebook may not work on your local machine because you don't have the access to the APP_ID and APP_SECRET.
 
 ### Run tests
+
+To run the tests you need to run the below command in your terminal:
 
 ```
     rpsec --format documentation
