@@ -29,11 +29,11 @@
 
 ## Live Demo
 
-(https://timetivity.herokuapp.com/)
+[Live Demo](https://timetivity.herokuapp.com/)
 
 ## Presentation Video
 
-(https://www.loom.com/share/9f399bbbb60245bbb0fcfc51149fc251)
+![Presentation Video](https://www.loom.com/share/9f399bbbb60245bbb0fcfc51149fc251)
 
 ## Getting Started
 
@@ -41,9 +41,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Ruby: 2.6.3
+- Rails: 5.2.3
+- Postgres: >=9.5
 
 ### Setup
 
