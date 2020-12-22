@@ -89,7 +89,7 @@ Open `http://localhost:3000/` in your browser.
 To run the tests you need to run the below command in your terminal:
 
 ```
-    rpsec --format documentation
+    rspec --format documentation
 ```
 
 ## Martin Najjar
