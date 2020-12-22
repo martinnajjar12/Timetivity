@@ -1,0 +1,53 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+ul {
+  li {
+    list-style: none;
+    width: 100%;
+  }
+}
+
+.group_link {
+  text-decoration: none;
+  color: #c6cbd1;
+}
+
+.group_link:hover {
+  color: #fff;
+}
+
+.border-bottom {
+  border-color: #c6cbd1;
+}
+
+.border-bottom:hover {
+  border-color: #fff;
+}
+
+.group_name {
+  font-size: larger;
+}
+
+.time-div {
+  height: 60px;
+  padding: 0 15px;
+  margin: 0 2px;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.grey-bg {
+  background-color: #c6cbd1;
+  height: 100vh;
+}
+
+.activity-div {
+  height: 60px;
+
+  .img-thumbnail {
+    border: none;
+  }
+}

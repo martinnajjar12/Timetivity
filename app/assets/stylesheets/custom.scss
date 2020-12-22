@@ -1,0 +1,41 @@
+.main-div {
+  max-width: 576px;
+  min-width: 375px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: #c6cbd1;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.fixed-bottom {
+  max-width: 576px;
+  min-width: 375px;
+  margin: 0 auto;
+  height: 60px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.bg-blue {
+  background-color: #3778c2;
+  color: #fff;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.picture-div {
+  width: 75px;
+  height: 75px;
+  background-size: cover;
+}
