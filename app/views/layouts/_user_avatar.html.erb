@@ -1,0 +1,6 @@
+<div class="text-center mt-4 container">
+  <%= link_to user_path(current_user.id), class: 'link' do %>
+    <%= user_avatar %>
+    <h2 class='text-white'><%= current_user.name %></h2>
+  <% end %>
+</div>

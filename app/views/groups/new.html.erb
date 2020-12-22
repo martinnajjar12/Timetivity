@@ -1,0 +1,15 @@
+<div class='container'>
+<h2 class='mb-4 text-center'>Create a new group</h2>
+
+<%= form_with(model: [:user, @group]) do |f| %>
+  <div class='mb-3'>
+    <%= f.label :name, class: 'form-label' %>
+    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+  </div>
+  <div class='mb-3'>
+    <%= f.label 'Upload an icon for the group', class: 'form-label' %>
+    <%= f.file_field :icon, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Create a group', class: 'btn btn-success' %>
+<% end %>
+</div>

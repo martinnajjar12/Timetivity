@@ -1,0 +1,17 @@
+<div class='container mt-4'>
+  <%= form_with(model: [:user, @activity]) do |f| %>
+    <div class='mb-3'>
+      <%= f.label :name, class: 'form-label' %>
+      <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    </div>
+    <div class='mb-3'>
+      <%= f.label :time, class: 'form-label' %>
+      <%= f.number_field :time, class: 'form-control', step: 0.1 %>
+    </div>
+    <div class='mb-3'>
+      <%= f.label 'Select Group', class: 'form-label' %>
+      <%= select("activity", "group_id", current_user.groups.pluck(:name, :id), { include_blank: true }, { class: 'form-select' }) %>
+    </div>
+      <%= f.submit 'Create activity', class: 'btn btn-success' %>
+  <% end %>
+</div>
