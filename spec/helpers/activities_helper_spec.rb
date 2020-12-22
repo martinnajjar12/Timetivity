@@ -13,6 +13,13 @@ RSpec.describe ActivitiesHelper, type: :helper do
     end
   end
 
+  describe '#activities_total_time' do
+    it 'returns a Float when there are activities' do
+      assign(:activities, [Activity.create(name: 'Testing', time: 1.5)])
+      expect(helper.activities_total_time).to be_a Float
+    end
+  end
+
   describe '#external_group_id' do
     it 'returns an integer' do
       expect(helper.external_group_id).to be_an Integer
