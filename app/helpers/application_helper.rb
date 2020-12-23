@@ -14,11 +14,16 @@ module ApplicationHelper
     end
   end
 
+  def navbar_brand
+    link_to 'Timetivity', root_path, class: 'navbar-brand' unless user_signed_in?
+  end
+
   def nav_links
     if user_signed_in?
       content_tag :span, class: 'd-flex' do
-        concat(content_tag(:span, (link_to 'My activities', user_activities_path(current_user.id), class: 'nav-link')))
-        concat(content_tag(:span, (link_to 'External Activities', user_group_path(current_user.id, external_group_id),
+        concat(content_tag(:span, (link_to 'Home', root_path, class: 'nav-link')))
+        concat(content_tag(:span, (link_to 'Activities', user_activities_path(current_user.id), class: 'nav-link')))
+        concat(content_tag(:span, (link_to 'E-Activities', user_group_path(current_user.id, external_group_id),
                                            class: 'nav-link')))
         concat(content_tag(:span, (link_to 'Sign Out', destroy_user_session_path,
                                            method: :delete, class: 'btn btn-outline-light btn-sm')))

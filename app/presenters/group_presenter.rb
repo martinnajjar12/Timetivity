@@ -27,7 +27,7 @@ class GroupPresenter < BasePresenter
 
   def name_and_date
     content_tag :span do
-      concat(content_tag(:span, group.name.capitalize, class: 'group_name ml-4 w-100 d-block'))
+      concat(content_tag(:span, group.name.capitalize, class: 'group_name ml-4 d-block'))
       concat(content_tag(:span, "Created #{time_ago_in_words(group.created_at)} ago",
                          class: 'ml-4 border-bottom w-75 d-block'))
     end
