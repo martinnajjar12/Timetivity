@@ -34,6 +34,13 @@ RSpec.describe ApplicationHelper, type: :helper do
     end
   end
 
+  describe '#navbar_brand' do
+    it 'returns a link with class navbar-brand' do
+      sign_out @user
+      expect(helper.navbar_brand).to include('<a class="navbar-brand" href="/">Timetivity</a>')
+    end
+  end
+
   describe '#user_avatar' do
     it "returns a gravatar if the user doesn't upload a photo" do
       expect(helper.user_avatar).to include('src="http://gravatar.com/avatar')
