@@ -5,15 +5,16 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def destroy
-    user = User.find(facebook_deletion.id)
+  def destroy(user_id)
+    user = User.find(user_id)
     user.destroy
-    render :json { url: 'timetivity.herokuapp.com', confirmation_code: Array.new(10){[*"A".."Z", *"0".."9"].sample}.join }
+    render json: { url: 'timetivity.herokuapp.com', confirmation_code: Array.new(10){[*"A".."Z", *"0".."9"].sample}.join }
   end
 
   private
 
   def facebook_deletion
-    params.permit[:signed_request]
+    user_id = params.permit[:signed_request.id]
+    destroy(user_id)
   end
 end
