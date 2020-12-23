@@ -15,9 +15,7 @@ module ApplicationHelper
   end
 
   def navbar_brand
-    unless user_signed_in?
-      link_to "Timetivity", root_path, class: 'navbar-brand'
-    end
+    link_to 'Timetivity', root_path, class: 'navbar-brand' unless user_signed_in?
   end
 
   def nav_links
